@@ -7,9 +7,14 @@ import { ItemService } from "./item.service";
     selector: "ns-items",
     moduleId: module.id,
     templateUrl: "./items.component.html",
+    styleUrls: ["./items.component.css"]
 })
 export class ItemsComponent implements OnInit {
     items: Item[];
+
+    public templateSelector = (item, index, items) => {
+        return item.visitedOn ? "visited" : "not-visited";
+    };
 
     // This pattern makes use of Angular’s dependency injection implementation to inject an instance of the ItemService service into this class. 
     // Angular knows about this service because it is included in your app’s main NgModule, defined in app.module.ts.
@@ -18,4 +23,5 @@ export class ItemsComponent implements OnInit {
     ngOnInit(): void {
         this.items = this.itemService.getItems();
     }
+
 }

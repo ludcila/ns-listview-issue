@@ -1,25 +1,16 @@
-# NativeScript Angular Template
+# README
 
-This template creates a "Hello, world" NativeScript app using TypeScript and Angular.
+This is a sample app to reproduce this issue:
+[Android listview error: There is no entry with key in the realized views cache](https://github.com/telerik/nativescript-ui-feedback/issues/741)
 
-You can create a new app that uses this template with either the `--template` option.
+The issue describes the problem using a RadListView, but it can be reproduced using a regular ListView.
 
-```
-tns create my-app-name --template tns-template-hello-world-ng
-```
+### Platform
+Android 8.0
 
-Or the `--ng` shorthand.
-
-```
-tns create my-app-name --ng
-```
-
-> Note: Both commands will create a new NativeScript app that uses the latest version of this template published to [npm] (https://www.npmjs.com/package/tns-template-hello-world-ng).
-
-If you want to create a new app that uses the source of the template from the `master` branch, you can execute the following:
-
-```
-tns create my-app-name --template https://github.com/NativeScript/template-hello-world-ng.git#master
-```
-
-**NB:** Please, have in mind that the master branch may refer to dependencies that are not on NPM yet!
+### Steps
+1. Tap on an item to go to the detailed view
+2. Navigate back to the list view
+3. The font color of the visited item should change to red, but it doesn't
+4. Scroll through the list or click on another item; at some point the app will crash with this error: `There is no entry with key 'org.nativescript.widgets.StackLayout{1f0cc9 V.E...... ........ 0,-119-1080,42}' in the realized views cache for template with key'visited'.`
+5. The problem only occurs when `pageTransition="slide"` is used. The app behaves as expected if the slide transition is removed.
