@@ -1,9 +1,6 @@
 # README
 
-This is a sample app to reproduce this issue:
-[Android listview error: There is no entry with key in the realized views cache](https://github.com/telerik/nativescript-ui-feedback/issues/741)
-
-The issue describes the problem using a RadListView, but it can be reproduced using a regular ListView.
+This is a sample app to reproduce https://github.com/NativeScript/nativescript-angular/issues/1479
 
 ### Platform
 Android 8.0
