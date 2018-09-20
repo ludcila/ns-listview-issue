@@ -1,6 +1,6 @@
 # README
 
-This is a sample app to reproduce https://github.com/NativeScript/nativescript-angular/issues/1479
+This is a sample app to reproduce https://github.com/NativeScript/NativeScript/issues/6284
 
 ### Platform
 Android 8.0
